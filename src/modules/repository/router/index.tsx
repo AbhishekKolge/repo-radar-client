@@ -1,5 +1,6 @@
 // import { lazy } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
+import { RepositoryList } from '../pages';
 
 // const Login = lazy(() =>
 //   import('../pages').then((module) => {
@@ -15,7 +16,7 @@ export const RepositoryRouter = (): RouteObject[] => {
     },
     {
       path: 'list',
-      element: <h1>Repo</h1>,
+      element: <RepositoryList />,
     },
   ];
 
