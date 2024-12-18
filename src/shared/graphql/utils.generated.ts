@@ -4,15 +4,19 @@
   *
   * instead, edit one of the `.graphql` files in this project and run
   *
-  * npm run graphql-codegen
+  * pnpm run graphql-codegen
   *
   * for this file to be re-created
   */
 
+// Vite HMR (Hot Module Replacement)
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
+
 import * as Types from '../../generated/types.generated';
 
-import { graphqlApiSlice } from 'api/graphql-api-slice.ts';
-module.hot?.accept();
+import { graphqlApiSlice } from '@/api/graphql-api-slice.ts';
 export type GetCountriesQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
@@ -30,7 +34,7 @@ export const GetCountriesDocument = `
     `;
 
 const injectedRtkApi = graphqlApiSlice.injectEndpoints({
-  overrideExisting: module.hot?.status() === "apply",
+  overrideExisting: import.meta.hot.accept() === "apply",
   endpoints: (build) => ({
     getCountries: build.query<GetCountriesQuery, GetCountriesQueryVariables | void>({
       query: (variables) => ({ document: GetCountriesDocument, variables })

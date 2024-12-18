@@ -36,8 +36,8 @@ importers:
         specifier: ^16.10.0
         version: 16.10.0
       graphql-request:
-        specifier: ^7.1.2
-        version: 7.1.2(graphql@16.10.0)
+        specifier: ^6.1.0
+        version: 6.1.0(graphql@16.10.0)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -104,7 +104,7 @@ importers:
         version: 4.4.0(graphql@16.10.0)
       '@graphql-codegen/typescript-rtk-query':
         specifier: ^3.1.1
-        version: 3.1.1(@reduxjs/toolkit@2.5.0(react-redux@9.2.0(@types/react@18.3.17)(react@18.3.1)(redux@5.0.1))(react@18.3.1))(graphql-request@7.1.2(graphql@16.10.0))(graphql-tag@2.12.6(graphql@16.10.0))(graphql@16.10.0)
+        version: 3.1.1(@reduxjs/toolkit@2.5.0(react-redux@9.2.0(@types/react@18.3.17)(react@18.3.1)(redux@5.0.1))(react@18.3.1))(graphql-request@6.1.0(graphql@16.10.0))(graphql-tag@2.12.6(graphql@16.10.0))(graphql@16.10.0)
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
@@ -2287,11 +2287,6 @@ packages:
     peerDependencies:
       graphql: 14 - 16
 
-  graphql-request@7.1.2:
-    resolution: {integrity: sha512-+XE3iuC55C2di5ZUrB4pjgwe+nIQBuXVIK9J98wrVwojzDW3GMdSBZfxUk8l4j9TieIpjpggclxhNEU9ebGF8w==}
-    peerDependencies:
-      graphql: 14 - 16
-
   graphql-tag@2.12.6:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
@@ -4291,7 +4286,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript-rtk-query@3.1.1(@reduxjs/toolkit@2.5.0(react-redux@9.2.0(@types/react@18.3.17)(react@18.3.1)(redux@5.0.1))(react@18.3.1))(graphql-request@7.1.2(graphql@16.10.0))(graphql-tag@2.12.6(graphql@16.10.0))(graphql@16.10.0)':
+  '@graphql-codegen/typescript-rtk-query@3.1.1(@reduxjs/toolkit@2.5.0(react-redux@9.2.0(@types/react@18.3.17)(react@18.3.1)(redux@5.0.1))(react@18.3.1))(graphql-request@6.1.0(graphql@16.10.0))(graphql-tag@2.12.6(graphql@16.10.0))(graphql@16.10.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.10.0)
       '@graphql-codegen/visitor-plugin-common': 2.13.1(graphql@16.10.0)
@@ -4302,7 +4297,7 @@ snapshots:
       graphql-tag: 2.12.6(graphql@16.10.0)
       tslib: 2.6.3
     optionalDependencies:
-      graphql-request: 7.1.2(graphql@16.10.0)
+      graphql-request: 6.1.0(graphql@16.10.0)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -6122,11 +6117,6 @@ snapshots:
       graphql: 16.10.0
     transitivePeerDependencies:
       - encoding
-
-  graphql-request@7.1.2(graphql@16.10.0):
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
-      graphql: 16.10.0
 
   graphql-tag@2.12.6(graphql@16.10.0):
     dependencies:

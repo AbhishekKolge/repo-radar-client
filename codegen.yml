@@ -19,18 +19,22 @@ generates:
               *
               * instead, edit one of the `.graphql` files in this project and run
               *
-              * npm run graphql-codegen
+              * pnpm run graphql-codegen
               *
               * for this file to be re-created
               */
       - add:
-          content: 'module.hot?.accept();'
+          content: |
+            // Vite HMR (Hot Module Replacement)
+            if (import.meta.hot) {
+              import.meta.hot.accept();
+            }
       - typescript-operations
       - typescript-rtk-query:
-          importBaseApiFrom: 'api/graphql-api-slice.ts'
+          importBaseApiFrom: '@/api/graphql-api-slice.ts'
           importBaseApiAlternateName: graphqlApiSlice
           exportHooks: true
-          overrideExisting: 'module.hot?.status() === "apply"'
+          overrideExisting: 'import.meta.hot.accept() === "apply"'
     config:
       plugins:
         - typescript
