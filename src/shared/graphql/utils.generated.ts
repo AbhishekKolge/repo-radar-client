@@ -34,7 +34,7 @@ export const GetCountriesDocument = `
     `;
 
 const injectedRtkApi = graphqlApiSlice.injectEndpoints({
-  overrideExisting: import.meta.hot.accept() === "apply",
+  overrideExisting: import.meta.hot ? (import.meta.hot.accept && import.meta.hot.accept() !== undefined) : false,
   endpoints: (build) => ({
     getCountries: build.query<GetCountriesQuery, GetCountriesQueryVariables | void>({
       query: (variables) => ({ document: GetCountriesDocument, variables })

@@ -56,5 +56,6 @@ const baseQueryWithErrorHandler = async (
 export const graphqlApiSlice = createApi({
   reducerPath: 'graphql',
   baseQuery: baseQueryWithErrorHandler,
+  tagTypes: ['Country'],
   endpoints: () => ({}),
 });

@@ -34,7 +34,8 @@ generates:
           importBaseApiFrom: '@/api/graphql-api-slice.ts'
           importBaseApiAlternateName: graphqlApiSlice
           exportHooks: true
-          overrideExisting: 'import.meta.hot.accept() === "apply"'
+          addTagTypes: true
+          overrideExisting: 'import.meta.hot ? (import.meta.hot.accept && import.meta.hot.accept() !== undefined) : false'
     config:
       plugins:
         - typescript
