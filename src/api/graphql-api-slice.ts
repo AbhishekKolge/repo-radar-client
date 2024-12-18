@@ -4,7 +4,8 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import type { DocumentNode } from 'graphql';
 import { ClientError } from 'graphql-request';
 import { logoutHandler } from '@/modules/auth/service';
-import { env, errorToast } from '@/shared/utils';
+import { CustomGraphQLError } from '@/shared/types';
+import { env, errorToast, formatGraphQlErrors } from '@/shared/utils';
 import { RootState } from '@/store';
 
 const baseQuery = graphqlRequestBaseQuery({
@@ -18,13 +19,14 @@ const baseQuery = graphqlRequestBaseQuery({
   },
   customErrors: (error) => {
     const { errors } = error.response;
+
     const errorObj = errors?.[0];
     if (errorObj) {
-      return {
+      return formatGraphQlErrors({
         code: errorObj.extensions.code,
         status: errorObj.extensions.statusCode,
         message: errorObj.message,
-      };
+      } as CustomGraphQLError);
     }
     return null;
   },
@@ -47,7 +49,7 @@ const baseQueryWithErrorHandler = async (
 
   if (result?.error) {
     const { message } = result.error;
-    errorToast(message || 'Something went wrong!, please try again');
+    errorToast(message);
   }
 
   return result;
