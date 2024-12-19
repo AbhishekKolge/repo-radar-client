@@ -3,6 +3,7 @@ import { AuthLayout } from '@/modules/auth/layouts';
 import { AuthRouter } from '@/modules/auth/router';
 import { ErrorBoundary } from '@/modules/error/pages';
 import { RepositoryRouter } from '@/modules/repository/router';
+import { SettingsRouter } from '@/modules/settings/router';
 import { Provider } from '@/providers';
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: 'repository',
         children: RepositoryRouter(),
+      },
+      {
+        path: 'settings',
+        children: SettingsRouter(),
       },
     ],
   },
