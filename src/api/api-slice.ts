@@ -15,7 +15,7 @@ const baseQuery = fetchBaseQuery({
   },
 });
 
-const baseQueryWithReAuth = async (
+const baseQueryWithErrorHandler = async (
   args: string | FetchArgs,
   api: BaseQueryApi,
   extraOptions: BaseQueryExtraOptions<typeof baseQuery>,
@@ -37,7 +37,7 @@ const baseQueryWithReAuth = async (
 
 export const apiSlice = createApi({
   reducerPath: 'api',
-  baseQuery: baseQueryWithReAuth,
+  baseQuery: baseQueryWithErrorHandler,
   tagTypes: [],
   endpoints: () => ({}),
 });

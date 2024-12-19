@@ -12,7 +12,7 @@ import {
   warningToast,
 } from '@/shared/utils';
 
-export const logoutHandler = (isSession: boolean) => {
+export const logoutHandler = (isSession: boolean = false) => {
   return (dispatch: Dispatch): void => {
     removeAuthStorage();
     dispatch(authActions.logout());

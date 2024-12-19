@@ -1,9 +1,12 @@
 export const ROUTES = {
+  auth: '/auth',
   login: '/auth/login',
+  github: '/auth/github',
   repository: '/repository',
   repositoryList: '/repository/list',
-  setting: '/setting',
-  profileSetting: '/setting/profile',
-  preferenceSetting: '/setting/preference',
-  securitySetting: '/setting/security',
+  repositoryDetails: (id: string) => `/repository/${id}`,
+  settings: '/settings',
+  profileSettings: '/settings/profile',
+  preferenceSettings: '/settings/preference',
+  securitySettings: '/settings/security',
 };

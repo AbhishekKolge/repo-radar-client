@@ -1,11 +1,16 @@
-// import { lazy } from 'react';
+import { lazy } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
 
-// const Login = lazy(() =>
-//   import('../pages').then((module) => {
-//     return { default: module.Login };
-//   }),
-// );
+const RepositoryList = lazy(() =>
+  import('../pages').then((module) => {
+    return { default: module.RepositoryList };
+  }),
+);
+const RepositoryDetails = lazy(() =>
+  import('../pages').then((module) => {
+    return { default: module.RepositoryDetails };
+  }),
+);
 
 export const RepositoryRouter = (): RouteObject[] => {
   const routes: RouteObject[] = [
@@ -15,7 +20,11 @@ export const RepositoryRouter = (): RouteObject[] => {
     },
     {
       path: 'list',
-      element: <h1>Repo</h1>,
+      element: <RepositoryList />,
+    },
+    {
+      path: ':id',
+      element: <RepositoryDetails />,
     },
   ];
 

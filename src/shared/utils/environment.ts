@@ -4,6 +4,7 @@ const envSchema = z.object({
   VITE_GITHUB_LOGIN_URL: z.string().trim().url(),
   VITE_ENV: z.enum(['development', 'production', 'staging']).default('development'),
   VITE_BASE_URL: z.string().trim().url(),
+  VITE_GRAPHQL_URL: z.string().trim().url(),
   VITE_ACCESS_TOKEN_EXPIRATION_TIME: z.coerce
     .number()
     .int()
