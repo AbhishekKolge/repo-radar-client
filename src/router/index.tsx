@@ -1,4 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { PrimaryLayout } from '@/components/layout';
 import { AuthLayout } from '@/modules/auth/layouts';
 import { AuthRouter } from '@/modules/auth/router';
 import { ErrorBoundary } from '@/modules/error/pages';
@@ -23,11 +24,17 @@ export const router = createBrowserRouter([
       },
       {
         path: 'repository',
+        element: <PrimaryLayout />,
         children: RepositoryRouter(),
       },
       {
         path: 'settings',
-        children: SettingsRouter(),
+        element: <PrimaryLayout />,
+        children: [
+          {
+            children: SettingsRouter(),
+          },
+        ],
       },
     ],
   },

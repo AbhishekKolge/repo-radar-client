@@ -1,3 +1,7 @@
+import { uniqueId } from 'lodash';
+import { ListCheck, Settings } from 'lucide-react';
+import { ROUTES } from './getters';
+
 export const TOP_BAR_CONFIG = {
   barColors: {
     0: '#18181b',
@@ -20,3 +24,17 @@ export const AUTH_STORAGE_NAME = 'auth';
 export const MOBILE_BREAKPOINT = 640;
 export const TABLET_BREAKPOINT = 768;
 export const DESKTOP_BREAKPOINT = 1024;
+export const SIDEBAR_OPTIONS = [
+  {
+    id: uniqueId(),
+    title: 'Repository',
+    url: ROUTES.repository,
+    icon: ListCheck,
+  },
+  {
+    id: uniqueId(),
+    title: 'Settings',
+    url: ROUTES.settings,
+    icon: Settings,
+  },
+];

@@ -5,8 +5,8 @@ export const ROUTES = {
   repository: '/repository',
   repositoryList: '/repository/list',
   repositoryDetails: (id: string) => `/repository/${id}`,
-  setting: '/setting',
-  profileSetting: '/setting/profile',
-  preferenceSetting: '/setting/preference',
-  securitySetting: '/setting/security',
+  settings: '/settings',
+  profileSettings: '/settings/profile',
+  preferenceSettings: '/settings/preference',
+  securitySettings: '/settings/security',
 };
