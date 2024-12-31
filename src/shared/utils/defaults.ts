@@ -38,3 +38,20 @@ export const SIDEBAR_OPTIONS = [
     icon: Settings,
   },
 ];
+export const SETTINGS_TAB_OPTIONS = [
+  {
+    id: uniqueId(),
+    title: 'Edit Profile',
+    url: ROUTES.profileSettings,
+  },
+  {
+    id: uniqueId(),
+    title: 'Preferences',
+    url: ROUTES.preferenceSettings,
+  },
+  {
+    id: uniqueId(),
+    title: 'Security',
+    url: ROUTES.securitySettings,
+  },
+];
