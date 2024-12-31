@@ -4,6 +4,7 @@ import { AuthLayout } from '@/modules/auth/layouts';
 import { AuthRouter } from '@/modules/auth/router';
 import { ErrorBoundary } from '@/modules/error/pages';
 import { RepositoryRouter } from '@/modules/repository/router';
+import { SettingsLayout } from '@/modules/settings/layouts';
 import { SettingsRouter } from '@/modules/settings/router';
 import { Provider } from '@/providers';
 
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
         element: <PrimaryLayout />,
         children: [
           {
+            element: <SettingsLayout />,
             children: SettingsRouter(),
           },
         ],
